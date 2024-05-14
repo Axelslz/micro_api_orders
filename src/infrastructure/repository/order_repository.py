@@ -1,7 +1,5 @@
-# infrastructure/order_repository.py
-
 from config.database_config import get_database_connection
-from domain.order import Order
+from domain.model.order import Order
 
 class OrderRepository:
     def __init__(self):

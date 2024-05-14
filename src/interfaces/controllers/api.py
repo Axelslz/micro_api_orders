@@ -1,8 +1,6 @@
-# interfaces/api.py
-
 from flask import Flask, jsonify, request
-from application.order_usecases import CreateOrderUseCase, ListOrdersUseCase
-from infrastructure.order_repository import OrderRepository
+from application.services.order_usecases import CreateOrderUseCase, ListOrdersUseCase
+from infrastructure.repository.order_repository import OrderRepository
 
 app = Flask(__name__)
 order_repository = OrderRepository()
@@ -19,7 +17,7 @@ def create_order():
     order = create_order_usecase.execute(total, fecha, estatus)
     return jsonify(order.__dict__), 201
 
-@app.route('/ordenes', methods=['GET'])
+@app.route('/listorders', methods=['GET'])
 def list_orders():
     orders = list_orders_usecase.execute()
     return jsonify([order.__dict__ for order in orders]), 200
