@@ -1,0 +1,14 @@
+# Diseño de Base de Datos
+
+## Tablas
+
+### Ordenes
+
+| Campo   | Tipo    | Descripción     |
+|---------|---------|-----------------|
+| Id      | INT     | Identificador único de la orden |
+| Total   | DECIMAL | Total de la orden |
+| Fecha   | DATE    | Fecha de la orden |
+| Estatus | ENUM    | Estado de la orden (Pagado, Creado, Enviado) |
+
+
